@@ -1,0 +1,487 @@
+/* Estilos para la sección de inicio */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 100vh;
+    position: relative; /* Para posicionar el pseudo-elemento */
+    overflow: hidden; /* Asegúrate de que el fondo no se desborde */
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('mark.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Coloca el fondo detrás del contenido */
+    filter: blur(5px); /* Efecto de desenfoque */
+    animation: backgroundMove 10s linear infinite; /* Efecto de movimiento */
+}
+
+.home-section h1,
+.home-section p,
+.home-section a {
+    position: relative; /* Para asegurarse de que el texto esté por encima del fondo */
+    z-index: 2; /* Coloca el texto sobre el fondo */
+    color: #00ffff; /* Color del texto para un efecto cibernético */
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: center;
+    }
+    100% {
+        background-position: right; /* Movimiento horizontal */
+    }
+}
+
+
+.welcome-container {
+    max-width: 600px;
+    background-color: gray;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease;
+}
+
+.welcome-container h1 {
+    font-size: 2.5em;
+    color: chocolate;
+}
+
+.welcome-container p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 20px 0;
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a7a1;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #1393e9;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Aumenta aún más el espacio entre los elementos */
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative; /* Para el posicionamiento relativo del hover */
+}
+
+.nav-links li a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 20px; /* Mantén el tamaño de la fuente */
+    padding: 12px 20px; /* Ajusta el padding para más espacio */
+    background-color: transparent;
+    border: 2px solid #00ffff;
+    border-radius: 12px; /* Borde más redondeado */
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease; /* Transiciones más suaves */
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8); /* Sombras más intensas */
+    display: inline-block; /* Evita que cambie el tamaño */
+}
+
+/* Efecto de resplandor y animación en hover */
+.nav-links li a:hover {
+    background-color: #00ffff;
+    color: #0d0d0d;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #00ffff; /* Sombras más intensas en hover */
+    transform: scale(1.1); /* Aumento de tamaño más pronunciado */
+}
+
+/* Efecto de brillo en los bordes */
+.nav-links li a::before,
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    transition: all 0.5s ease; /* Transición más lenta para un efecto suave */
+}
+
+/* Efecto de borde izquierdo */
+.nav-links li a::before {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 255, 0.6), transparent); /* Color más intenso */
+}
+
+/* Movimiento del borde izquierdo en hover */
+.nav-links li a:hover::before {
+    left: 100%;
+}
+
+/* Efecto de borde superior */
+.nav-links li a::after {
+    top: -100%;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(255, 0, 255, 0.6), transparent); /* Color más intenso */
+}
+
+/* Movimiento del borde superior en hover */
+.nav-links li a:hover::after {
+    top: 100%;
+}
+
+/* Agregar un efecto de pulso */
+.nav-links li a:hover {
+    animation: pulse 0.8s infinite; /* Efecto de pulso */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Fondo en movimiento para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #0d0d0d, #1a1a1a, #0d0d0d);
+    background-size: 300% 300%;
+    animation: cyberpunkBackground 8s ease infinite;
+}
+
+/* Efecto de gradiente en movimiento */
+@keyframes cyberpunkBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Ajustes opcionales para el texto y la sección de bienvenida */
+.welcome-container h1, .welcome-container p, .explore-button {
+    color: #00ffff;
+    text-shadow: 0 0 5px black, 0 0 10px #ff00ff, 0 0 15px green;
+}
+.contact-section {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    margin: 20px;
+}
+
+.contact-section h3 {
+    color: #00ffff;
+    font-size: 2em;
+}
+
+.contact-section p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: turquoise;
+    color: black;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', Courier, monospace; /* Fuente para un toque futurista */
+    backdrop-filter: blur(5px);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color:magenta;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #00ffff;
+    color: #0d0d0d;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form button:hover {
+    background-color: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Efecto de resplandor en el botón */
+.contact-form button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 0, 255, 0.4), transparent);
+    animation: move 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000; /* Asegurarse de que esté en la parte superior */
+}
+
+/* Estilo para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1001; /* Por encima del botón */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+    border-radius: 5px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.product-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro y semitransparente */
+    color: #00ffff; /* Color de texto cibernético */
+}
+
+.product-section h3 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #ff00ff; /* Efecto de sombra */
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Para permitir que los elementos se envuelvan */
+    gap: 20px; /* Espacio entre tarjetas */
+}
+
+.product-card {
+    background: rgba(0, 255, 255, 0.1); /* Fondo de las tarjetas */
+    border: 2px solid #00ffff; /* Borde cibernético */
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px; /* Ancho fijo para las tarjetas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto al pasar el mouse */
+    position: relative; /* Para el efecto de fondo */
+    overflow: hidden; /* Para ocultar el fondo en movimiento */
+}
+
+.product-card img {
+    width: 100%; /* Imagen al 100% del contenedor */
+    border-radius: 10px; /* Bordes redondeados en la imagen */
+    transition: transform 0.3s ease; /* Efecto al pasar el mouse sobre la imagen */
+}
+
+.product-card h4 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.product-card p {
+    font-size: 1.2rem;
+}
+
+.product-card button {
+    background-color: #00ffff;
+    color: #0d0d0d;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efectos de transición */
+    font-size: 1rem;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de levantamiento */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Efecto de sombra */
+}
+
+.product-card:hover img {
+    transform: scale(1.05); /* Efecto de aumento en la imagen */
+}
+
+.product-card button:hover {
+    background-color: #ff00ff; /* Cambiar color al pasar el mouse */
+    color: black; /* Cambiar color del texto */
+}
+.cart-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffff; /* Color de texto cibernético */
+    text-align: center;
+}
+
+.cart-navigation {
+    margin-bottom: 30px;
+}
+
+.cart-navigation .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+.cart-navigation .nav-links li a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cart-navigation .nav-links li a:hover {
+    background-color: #00ffff;
+    color: #0d0d0d;
+}
+
+.cart-items {
+    margin: 20px 0;
+}
+
+.billing-form {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.billing-form input {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #00ffff;
+}
+
+.billing-form button {
+    background-color: #00ffff;
+    color: #0d0d0d;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.billing-form button:hover {
+    background-color: #ff00ff;
+    transform: scale(1.05);
+}

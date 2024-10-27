@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👜 Marketplace</title>
+    <link rel="stylesheet" href="market.css">
+    <style>
+        /* Estilos generales */
+    body {
+    background-image: url('mark.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* Esto fija la imagen en su lugar */
+    background-repeat: no-repeat;
+    animation: moveBackground 7s linear infinite; /* Efecto de movimiento */
+    font-family: Arial, sans-serif;
+    color: black;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0% 0%; /* Inicia en la parte superior izquierda */
+    }
+    100% {
+        background-position: 100% 100%; /* Mueve a la parte inferior derecha */
+    }
+}
+
+
+@keyframes cyberpunkBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+header {
+    background-color: chocolate;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo h1 {
+    background-color: #00ffff;
+    color: #0d0d0d;
+    box-shadow: 0 0 15px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block; 
+    position: relative;
+    animation: glow 1.5s infinite alternate, move 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    }
+    100% {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #ff00ff, 0 0 40px #00ffff;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: turquoise;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #00ccff;
+}
+
+/* Secciones */
+section {
+    padding: 80px 20px; 
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+#home {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+#productos {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+#ofertas {
+    background-color: rgba(255, 235, 205, 0.9);
+}
+
+#contacto {
+    background-color: rgba(225, 255, 245, 0.9);
+}
+
+#carrito {
+    background-color: rgba(240, 240, 250, 0.9);
+}
+
+/* Producto - sección contenedor */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease;
+}
+@keyframes rgbGlow {
+            0% { box-shadow: 0 0 15px red; }
+            33% { box-shadow: 0 0 15px green; }
+            66% { box-shadow: 0 0 15px blue; }
+            100% { box-shadow: 0 0 15px red; }
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-card h4 {
+            margin: 10px 0;
+        }
+
+        .product-card button {
+            background-color: #28a7a1;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #1393e9;
+        }
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🛒MARKETPLACE 🌱</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#carrito">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="home" class="home-section">
+            <div class="welcome-container">
+                <h1>¡Bienvenido a Marketplace BVH3!</h1><h2><P>Explora una gran variedad de productos y ofertas especiales.<p> Encuentra lo que necesitas al mejor precio y con la mejor calidad.</p></h2></P>
+                <a href="#productos" class="explore-button">Ver Productos</a>
+            </div>
+        </section>
+
+        
+        <section id="productos" class="product-section">
+            <h3>Productos</h3>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="dron.jpg" alt="Dron">
+                    <h4>Dron</h4>
+                    <p>Precio: $200.00</p>
+                    <button onclick="addProduct('Dron', 200)">Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="cafetera.jpg" alt="Cafetera">
+                    <h4>Cafetera</h4>
+                    <p>Precio: $100.00</p>
+                    <button onclick="addProduct('Cafetera', 100)">Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="laptop.jpg" alt="Laptop">
+                    <h4>Laptop</h4>
+                    <p>Precio: $800.00</p>
+                    <button onclick="addProduct('Laptop', 800)">Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="alfombra.jpg" alt="Alfombra">
+                    <h4>Alfombra</h4>
+                    <p>Precio: $150.00</p>
+                    <button onclick="addProduct('Alfombra', 150)">Añadir al carrito</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ofertas" class="offer-section">
+            <h3>Ofertas</h3>
+            <p><h2>Descubre nuestras ofertas especiales y descuentos.</h2></p>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="reloj.webp" alt="Reloj Inteligente">
+                    <h4>Reloj Inteligente</h4>
+                    <p><del>$150.00</del> <strong>$120.00</strong></p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="parlante.jpg" alt="Parlante Bluetooth">
+                    <h4>Parlante Bluetooth</h4>
+                    <p><del>$80.00</del> <strong>$65.00</strong></p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="camara.jpg" alt="Cámara Deportiva">
+                    <h4>Cámara Deportiva</h4>
+                    <p><del>$120.00</del> <strong>$95.00</strong></p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="tablet.jpg" alt="Tablet">
+                    <h4>Tablet</h4>
+                    <p><del>$300.00</del> <strong>$250.00</strong></p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+        </section>
+    
+    
+        <section id="contacto" class="contact-section">
+            <h3>Contacto</h3>
+            <p>¿Tienes alguna pregunta? Contáctanos a través de nuestro formulario.</p>
+            <form class="contact-form">
+                <input type="Hola" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Correo" required>
+                <textarea placeholder="Tu Mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        
+
+            </form>
+        </section>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const cartButton = document.getElementById("cart-button");
+                const cartModal = document.getElementById("cart-modal");
+                const closeButton = document.querySelector(".close-button");
+                const cartItemsContainer = document.querySelector(".cart-items");
+                
+                // Variable para almacenar los productos añadidos
+                let addedProducts = [];
+                
+                // Función para actualizar la visualización del carrito
+                function updateCartDisplay() {
+                    cartItemsContainer.innerHTML = ""; // Limpiar el contenedor
+        
+                    if (addedProducts.length === 0) {
+                        cartItemsContainer.innerHTML = "<p>No hay productos en tu carrito.</p>";
+                    } else {
+                        addedProducts.forEach(product => {
+                            const productElement = document.createElement("p");
+                            productElement.textContent = `${product.name} - $${product.price.toFixed(2)}`;
+                            cartItemsContainer.appendChild(productElement);
+                        });
+                    }
+                }
+        
+                // Abrir el modal solo si hay productos en el carrito
+                cartButton.addEventListener("click", function () {
+                    updateCartDisplay(); // Actualizar el contenido del carrito
+                    cartModal.style.display = "block"; // Mostrar el modal
+                });
+        
+                // Cerrar el modal
+                closeButton.addEventListener("click", function () {
+                    cartModal.style.display = "none"; // Ocultar el modal
+                });
+        
+                // Cerrar el modal si se hace clic fuera del contenido
+                window.addEventListener("click", function (event) {
+                    if (event.target === cartModal) {
+                        cartModal.style.display = "none"; // Ocultar el modal
+                    }
+                });
+        
+                // Función para añadir productos al carrito
+                window.addProduct = function (name, price) { // Definido en el ámbito global
+                    addedProducts.push({ name, price });
+                    alert(`${name} ha sido añadido al carrito.`);
+                };
+        
+                // Manejo del formulario de facturación
+                const billingForm = document.querySelector(".billing-form form");
+                billingForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevenir el envío del formulario
+        
+                    // Aquí puedes agregar la lógica para procesar la compra, como enviar los datos a un servidor
+        
+                    alert("Compra confirmada. ¡Gracias por tu compra!");
+                    // Reiniciar el carrito después de la compra
+                    addedProducts = [];
+                    updateCartDisplay(); // Limpiar el carrito visualmente
+                    cartModal.style.display = "none"; // Cerrar el modal
+                    billingForm.reset(); // Reiniciar el formulario de facturación
+                });
+            });
+        </script>
+        
+        
+<button id="cart-button" class="floating-button">🛒</button>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3>Productos Añadidos</h3>
+        <div class="cart-items">
+            <p>No hay productos en tu carrito.</p> 
+        </div>
+    </div>
+</div>
+
+
+<section id="carrito" class="cart-section">
+    <h3>Tu Carrito</h3>
+    <p>No hay productos en tu carrito.</p>
+    <div class="billing-form">
+        <h4>Información de Facturación</h4>
+        <form>
+            <input type="text" placeholder="Tu Nombre" required>
+            <input type="email" placeholder="Tu Correo" required>
+            <input type="text" placeholder="Dirección" required>
+            <input type="text" placeholder="Ciudad" required>
+            <input type="text" placeholder="Código Postal" required>
+            <button type="submit">Confirmar Compra</button>
+        </form>
+    </div>
+</section>
+</main>
+
+<footer>
+<p>Marketplace BVH3 © 2024</p>
+</footer>
+</body>
+</html>
